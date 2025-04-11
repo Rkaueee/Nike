@@ -1,24 +1,15 @@
 body {
-    margin: 0px;
-    padding: 0;
-    /* o padding eu zero ele para nao ter nenhum espaço*/
+    margin: 0;
+    padding: 20px 160px;
     background: #ccee66;
     color: white;
-    padding: 20px 160px;
-    /* depois coloco outro paddiing com os valores, o primeiro valor e da parte de baixo e da parte de cima, ja o segundo valor e da parte dos lados*/
     height: 100vh;
-    /*altura e 100vh seria tela toda */
     overflow: hidden;
-    /* Overflow : hidden = esconder o que sobra da pagina */
     font-family: "Noto Sans", sans-serif;
-
-
+    transition: background 0.2s ease;
 }
 
-body::before
-
-/*depois, parte preta da tela */
-    {
+body::before {
     content: '';
     background: #333333;
     position: absolute;
@@ -27,13 +18,10 @@ body::before
     transform: rotate(-70deg);
     width: 100%;
     height: 120%;
-
+    z-index: 0;
 }
 
-body::after
-
-/*antes nome da Nike na parte de tras */
-    {
+body::after {
     content: "Nike";
     position: absolute;
     top: 50%;
@@ -42,21 +30,18 @@ body::after
     color: black;
     font-size: 250px;
     font-weight: bold;
-    /*grossura da fonte*/
     opacity: 0.5;
-
-
+    z-index: 0;
 }
 
-.logo {
+.logo-nike{
     width: 80px;
-    /*largura*/
-
+    z-index: 1;
+    position: relative;
 }
 
 h4 {
     font-size: 30px;
-
 }
 
 h1 {
@@ -66,64 +51,50 @@ h1 {
 p {
     font-size: 16px;
     margin-bottom: 40px;
-    /*margin-top/em cima 
-      margin-bottom/embaixo
-      margin-left/esqueda 
-      margin-reight/direita*/
 }
 
 .botao-carrinho {
     background-color: #a3be52;
     padding: 10px 20px;
     border-radius: 20px;
-    /*para arredondar a borda*/
     font-size: 16px;
     color: black;
     cursor: pointer;
-    /*ele fica com uma maozinha em cima do botao de adicionar ao carrinho*/
-    transition: 0.5s;
+    transition: 0.2s;
 }
 
 .botao-carrinho:hover {
     opacity: 0.7;
-    /*transparencia do intem, aonde 1 e visivel e 0 e totalmente invisivel */
-
 }
 
 .tenis-verde {
     width: 800px;
     transform: rotate(-25deg);
-    /*deixar o item inclinado*/
-
-
+    transition: all 0.2s ease;
+    z-index: 2;
+    position: relative;
 }
 
 .caixa-principal {
     display: flex;
-    /* Ele coloca os intens um do lado do outro*/
     justify-content: space-between;
-    /*alinha na horizontal, signfica: espaço entre */
     align-items: center;
-    /*alinha na vertical*/
     height: 75%;
     position: relative;
     z-index: 1;
-    /*z-index indique que todo numero que for maior venha para frente, nao equeça de usar a positio:relative*/
-
+    gap: 30px;
 }
 
 .caixa-texto {
     max-width: 500px;
-    /*largura maxima*/
-
 }
 
 .caixa-botoes {
     z-index: 2;
     position: relative;
     display: flex;
-    gap: 10px;/*separa os itens*/
-
+    gap: 10px;
+    margin-top: 20px;
 }
 
 .botoes {
@@ -131,19 +102,19 @@ p {
     height: 80px;
     border-radius: 50%;
     cursor: pointer;
-    transition: 0.5s;
-    
+    transition: 0.2s;
 }
+
 .botoes:hover {
-    transform: translateY(-30px);/*para fazer os botoes mexerem. eicho Y para cima  e eicho x para os lados */
+    transform: translateY(-30px);
 }
-.botoes:active{
+
+.botoes:active {
     opacity: 0.6;
-   
 }
+
 .verdes {
     background: #ccee66;
-   
 }
 
 .azul {
@@ -153,21 +124,8 @@ p {
 .rosa {
     background: #ff9eb5;
 }
-@keyframes tenisCaindo {
-    0% {
-        transform: translateY(-200px) rotate(-25deg);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0) rotate(-25deg);
-        opacity: 1;
-    }
-}
 
-.tenis-animar {
-    animation: tenisCaindo 0.3s ease;
-}
-
+/* ✅ RESPONSIVIDADE: telas até 768px */
 @media (max-width: 768px) {
     body {
         padding: 20px;
@@ -177,29 +135,19 @@ p {
     .caixa-principal {
         flex-direction: column;
         align-items: center;
+        height: auto;
+        gap: 20px;
         text-align: center;
-    }
-
-    .caixa-texto {
-        max-width: 100%;
     }
 
     .tenis-verde {
         width: 90%;
-        margin-top: 30px;
         transform: rotate(0deg);
-    }
-
-    .caixa-botoes {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 15px;
         margin-top: 20px;
     }
 
-    .botoes {
-        width: 60px;
-        height: 60px;
+    .caixa-texto {
+        max-width: 100%;
     }
 
     h1 {
@@ -212,5 +160,31 @@ p {
 
     p {
         font-size: 14px;
+    }
+
+    .botao-carrinho {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    .caixa-botoes {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .botoes {
+        width: 60px;
+        height: 60px;
+    }
+
+    body::after {
+        font-size: 100px;
+        opacity: 0.2;
+    }
+
+    body::before {
+        left: -750px;
+        transform: rotate(-80deg);
     }
 }
