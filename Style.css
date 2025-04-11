@@ -188,3 +188,17 @@ p {
         transform: rotate(-80deg);
     }
 }
+@keyframes tenisCaindo {
+    0% {
+        transform: translateY(-200px) scale(1.1) rotate(-10deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) scale(1) rotate(-25deg);
+        opacity: 1;
+    }
+}
+
+.tenis-animar {
+    animation: tenisCaindo 0.4s ease;
+}
