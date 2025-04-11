@@ -1,0 +1,169 @@
+body {
+    margin: 0px;
+    padding: 0;
+    /* o padding eu zero ele para nao ter nenhum espaço*/
+    background: #ccee66;
+    color: white;
+    padding: 20px 160px;
+    /* depois coloco outro paddiing com os valores, o primeiro valor e da parte de baixo e da parte de cima, ja o segundo valor e da parte dos lados*/
+    height: 100vh;
+    /*altura e 100vh seria tela toda */
+    overflow: hidden;
+    /* Overflow : hidden = esconder o que sobra da pagina */
+    font-family: "Noto Sans", sans-serif;
+
+
+}
+
+body::before
+
+/*depois, parte preta da tela */
+    {
+    content: '';
+    background: #333333;
+    position: absolute;
+    top: 0;
+    left: -650px;
+    transform: rotate(-70deg);
+    width: 100%;
+    height: 120%;
+
+}
+
+body::after
+
+/*antes nome da Nike na parte de tras */
+    {
+    content: "Nike";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 250px;
+    font-weight: bold;
+    /*grossura da fonte*/
+    opacity: 0.5;
+
+
+}
+
+.logo {
+    width: 80px;
+    /*largura*/
+
+}
+
+h4 {
+    font-size: 30px;
+
+}
+
+h1 {
+    font-size: 80px;
+}
+
+p {
+    font-size: 16px;
+    margin-bottom: 40px;
+    /*margin-top/em cima 
+      margin-bottom/embaixo
+      margin-left/esqueda 
+      margin-reight/direita*/
+}
+
+.botao-carrinho {
+    background-color: #a3be52;
+    padding: 10px 20px;
+    border-radius: 20px;
+    /*para arredondar a borda*/
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+    /*ele fica com uma maozinha em cima do botao de adicionar ao carrinho*/
+    transition: 0.5s;
+}
+
+.botao-carrinho:hover {
+    opacity: 0.7;
+    /*transparencia do intem, aonde 1 e visivel e 0 e totalmente invisivel */
+
+}
+
+.tenis-verde {
+    width: 800px;
+    transform: rotate(-25deg);
+    /*deixar o item inclinado*/
+
+
+}
+
+.caixa-principal {
+    display: flex;
+    /* Ele coloca os intens um do lado do outro*/
+    justify-content: space-between;
+    /*alinha na horizontal, signfica: espaço entre */
+    align-items: center;
+    /*alinha na vertical*/
+    height: 75%;
+    position: relative;
+    z-index: 1;
+    /*z-index indique que todo numero que for maior venha para frente, nao equeça de usar a positio:relative*/
+
+}
+
+.caixa-texto {
+    max-width: 500px;
+    /*largura maxima*/
+
+}
+
+.caixa-botoes {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    gap: 10px;/*separa os itens*/
+
+}
+
+.botoes {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.5s;
+    
+}
+.botoes:hover {
+    transform: translateY(-30px);/*para fazer os botoes mexerem. eicho Y para cima  e eicho x para os lados */
+}
+.botoes:active{
+    opacity: 0.6;
+   
+}
+.verdes {
+    background: #ccee66;
+   
+}
+
+.azul {
+    background: #58cced;
+}
+
+.rosa {
+    background: #ff9eb5;
+}
+@keyframes tenisCaindo {
+    0% {
+        transform: translateY(-200px) rotate(-25deg);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0) rotate(-25deg);
+        opacity: 1;
+    }
+}
+
+.tenis-animar {
+    animation: tenisCaindo 0.3s ease;
+}
