@@ -167,3 +167,50 @@ p {
 .tenis-animar {
     animation: tenisCaindo 0.3s ease;
 }
+
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+        overflow: auto;
+    }
+
+    .caixa-principal {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .caixa-texto {
+        max-width: 100%;
+    }
+
+    .tenis-verde {
+        width: 90%;
+        margin-top: 30px;
+        transform: rotate(0deg);
+    }
+
+    .caixa-botoes {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .botoes {
+        width: 60px;
+        height: 60px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    h4 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
