@@ -67,11 +67,11 @@ function trocarCor(cor) {
         body.style.background = '#ccee66';
         botaoCarrinho.style.backgroundColor = '#a3be52';
     } else if (cor === 'rosa') {
-        imagemTenis.src = 'Imagens/nike2.png';
+        imagemTenis.src = 'Imagens/nike3.png';
         body.style.background = '#ff9eb5';
         botaoCarrinho.style.backgroundColor = '#e56d89';
     } else if (cor === 'azul') {
-        imagemTenis.src = 'Imagens/nike3.png';
+        imagemTenis.src = 'Imagens/nike2.png';
         body.style.background = '#58cced';
         botaoCarrinho.style.backgroundColor = '#36a2c9';
     }
